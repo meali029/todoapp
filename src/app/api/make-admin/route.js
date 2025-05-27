@@ -7,14 +7,13 @@ export async function GET() {
 
     const email = "mehboobaliali150@gmail.com";
 
-    // Check if user exists
     const existingUser = await User.findOne({ email });
 
     if (!existingUser) {
       return new Response("User not found", { status: 404 });
     }
 
-    // Update role to admin
+ 
     existingUser.role = "admin";
     await existingUser.save();
 

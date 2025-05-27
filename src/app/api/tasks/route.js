@@ -3,7 +3,7 @@ import Task from "../../models/task";
 
 export async function GET(request) {
   try {
-    await connectMongoose(); // ✅ Ensure Mongoose connection
+    await connectMongoose(); 
     const { searchParams } = new URL(request.url);
     const userEmail = searchParams.get("userEmail");
     const tasks = userEmail
@@ -16,7 +16,6 @@ export async function GET(request) {
     return Response.json({ message: "Failed to fetch tasks" }, { status: 500 });
   }
 }
-// POST: Create a new task
 export async function POST(request) {
   try {
    await connectMongoose();
@@ -42,7 +41,6 @@ export async function POST(request) {
   }
 }
 
-// PUT: Update a task
 export async function PUT(request) {
   try {
     await connectMongoose();

@@ -65,25 +65,12 @@ export default function AdminDashboard() {
       setUpdatingUserId(null);
     }
   }
-
-  // async function handleLogout() {
-  //   try {
-  //     await fetch("/api/auth/signout", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //     });
-  //     router.push("/");
-  //   } catch (error) {
-  //     console.error("Failed to log out:", error);
-  //   }
-  // }
-
   if (loading) return <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading admin dashboard...</p>;
   if (!authorized) return null;
 
   return (
     <main style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto", fontFamily: "Arial, sans-serif" }}>
-      {/* Logout button */}
+  
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
         <button
            onClick={() => signOut({ callbackUrl: "/" })}

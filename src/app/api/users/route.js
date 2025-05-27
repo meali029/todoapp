@@ -1,13 +1,11 @@
-// src/app/api/users/route.js
-import { connectMongoose } from "@/lib/mongoose"; // ✅ Use Mongoose connection helper
-import User from "../../models/user"; // Mongoose model
+import { connectMongoose } from "@/lib/mongoose"; 
+import User from "../../models/user"; 
 
-// GET: Fetch all users (excluding passwords)
 export async function GET() {
   try {
-    await connectMongoose(); // ✅ Ensure Mongoose is connected
+    await connectMongoose(); 
 
-    const users = await User.find({}, { password: 0 }); // Exclude password
+    const users = await User.find({}, { password: 0 }); 
 
     return new Response(JSON.stringify(users), {
       status: 200,
@@ -19,10 +17,9 @@ export async function GET() {
   }
 }
 
-// PUT: Update user role
 export async function PUT(req) {
   try {
-    await connectMongoose(); // ✅ Ensure Mongoose is connected
+    await connectMongoose(); 
 
     const { userId, role } = await req.json();
 
