@@ -56,7 +56,7 @@ export default function Home() {
         fontFamily: "sans-serif",
       }}
     >
-      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Welcome to the App</h1>
+      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Welcome to the TO Do App</h1>
       <p style={{ marginBottom: "1.5rem" }}>Please sign in to continue</p>
       <button
         onClick={() => signIn("google")}
